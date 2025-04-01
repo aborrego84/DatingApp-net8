@@ -20,6 +20,7 @@ namespace API.Helpers
                 .ForMember(d => d.PhotoUrl, o => // d:destination, o: options, s: source, use ! to avoid error because can be null
                 o.MapFrom(s => s.Photos.FirstOrDefault(x => x.IsMain)!.Url));      
             CreateMap<Photo,PhotoDto>();
+            CreateMap<MemberUpdateDto,AppUser>();
         }
     }
 }
